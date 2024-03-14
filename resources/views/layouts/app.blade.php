@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="{{ asset('assets/theme/images/favicon.ico') }}">
 
     <!-- Layout config Js -->
-
+    @stack('page-css')
     <!-- Bootstrap Css -->
     <link href="{{ asset('assets/theme/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
@@ -23,6 +23,7 @@
     <link href="{{ asset('assets/theme/css/app.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="{{ asset('assets/theme/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
+
 
 </head>
 
@@ -663,14 +664,16 @@
     <script src="{{ asset('assets/theme/js/layout.js') }}"></script>
 
     <!-- list.js min js -->
-    <script src="{{ asset('assets/theme/libs/list.js/list.min.js') }}"></script>
-    <script src="{{ asset('assets/theme/libs/list.pagination.js/list.pagination.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/theme/libs/list.js/list.min.js') }}"></script>
+    <script src="{{ asset('assets/theme/libs/list.pagination.js/list.pagination.min.js') }}"></script> --}}
 
     <!--ecommerce-customer init js -->
-    <script src="{{ asset('assets/theme/js/pages/ecommerce-customer-list.init.js') }}"></script>
+    {{-- <script src="{{ asset('assets/theme/js/pages/ecommerce-customer-list.init.js') }}"></script> --}}
 
     <!-- Sweet Alerts js -->
     <script src="{{ asset('assets/theme/libs/sweetalert2/sweetalert2.min.js') }}"></script>
+
+    @stack('page-scripts')
     <!-- App js -->
     <script src="{{ asset('assets/theme/js/app.js') }}"></script>
 

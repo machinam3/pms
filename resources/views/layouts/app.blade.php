@@ -531,10 +531,16 @@
                     </div>
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
-                        @cannot('view-any-user')
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{ route('dashboard.index') }}">
+                                <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboard</span>
+                            </a>
+                        </li>
+
+                        @can('viewAny', App\Models\User::class)
                             <li class="nav-item">
-                                <a class="nav-link menu-link" href="widgets.html">
-                                    <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboard</span>
+                                <a class="nav-link menu-link" href="{{ route('users.index') }}">
+                                    <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Users</span>
                                 </a>
                             </li>
                         @endcan
@@ -602,29 +608,7 @@
         <div class="main-content">
 
             <div class="page-content">
-                <div class="container-fluid">
-
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div
-                                class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
-                                <h4 class="mb-sm-0">Starter</h4>
-
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
-                                        <li class="breadcrumb-item active">Starter</li>
-                                    </ol>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end page title -->
-
-                </div>
-                <!-- container-fluid -->
+                @yield('content')
             </div>
             <!-- End Page-content -->
 
@@ -677,6 +661,16 @@
     <script src="{{ asset('assets/theme/js/pages/plugins/lord-icon-2.1.0.js') }}"></script>
     <script src="{{ asset('assets/theme/js/plugins.js') }}"></script>
     <script src="{{ asset('assets/theme/js/layout.js') }}"></script>
+
+    <!-- list.js min js -->
+    <script src="{{ asset('assets/theme/libs/list.js/list.min.js') }}"></script>
+    <script src="{{ asset('assets/theme/libs/list.pagination.js/list.pagination.min.js') }}"></script>
+
+    <!--ecommerce-customer init js -->
+    <script src="{{ asset('assets/theme/js/pages/ecommerce-customer-list.init.js') }}"></script>
+
+    <!-- Sweet Alerts js -->
+    <script src="{{ asset('assets/theme/libs/sweetalert2/sweetalert2.min.js') }}"></script>
     <!-- App js -->
     <script src="{{ asset('assets/theme/js/app.js') }}"></script>
 
